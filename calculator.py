@@ -1,32 +1,53 @@
 # calculator.py
 
-a = input("Enter the first number: ")
-b = input("Enter the second number: ")
-a = int(a)
-b = int(b)
-print("The number you entered is {} and {}".format(a, b))
+def calcInput():
+    a = input("Enter the first number: ")
+    b = input("Enter the second number: ")
+    a = int(a)
+    b = int(b)
+    print("The number you entered is {} and {}".format(a, b))
+    return a, b
 
-c = input("Enter a command: ")
-
-if c == 'a':
+def add(a, b):
     print("Add")
     answer = a + b
     print("{} + {} = {}".format(a, b, answer))
     print("Finished")
-elif c == 's':
+    
+def subtract(a, b):
     print("Subtract")
     answer = a - b
     print("{} - {} = {}".format(a, b, answer))
     print("Finished")
-elif c == 'm':
+    
+def multiply(a, b):
     print("Multiply")
     answer = a * b
     print("{} * {} = {}".format(a, b, answer))
     print("Finished")
-elif c == 'd':
+    
+def divide(a, b):
     print("Divide")
     answer = a / b
     print("{} / {} = {}".format(a, b, answer))
     print("Finished")
-else:
-    print("Error: Not a valid command")
+
+def mathCommand(a, b):
+    c = input("Enter a command: ")
+    if c == 'a':
+        add(a, b)
+    elif c == 's':
+        subtract(a, b)
+    elif c == 'm':
+        multiply(a, b)
+    elif c == 'd':
+        divide(a, b)
+    else:
+        print("Error: Not a valid command")
+
+x, y = calcInput()
+mathCommand(x, y)
+
+
+
+
