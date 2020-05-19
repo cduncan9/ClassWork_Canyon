@@ -1,5 +1,8 @@
 # calculator.py
 
+
+import math 
+
 def calcInput():
     a = input("Enter the first number: ")
     b = input("Enter the second number: ")
@@ -7,6 +10,7 @@ def calcInput():
     b = int(b)
     print("The number you entered is {} and {}".format(a, b))
     return a, b
+
 
 def add(a, b):
     print("Add")
@@ -32,6 +36,13 @@ def divide(a, b):
     print("{} / {} = {}".format(a, b, answer))
     print("Finished")
 
+	
+def squareRoot(a):
+	print("Square Root")
+	answer = math.sqrt(a)
+	print("Square root of {} is {}".format(a, answer))
+
+
 def mathCommand(a, b):
     c = input("Enter a command: ")
     if c == 'a':
@@ -42,6 +53,8 @@ def mathCommand(a, b):
         multiply(a, b)
     elif c == 'd':
         divide(a, b)
+    elif c == 'q':
+    	squareRoot(a)
     else:
         print("Error: Not a valid command")
 
